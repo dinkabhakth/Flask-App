@@ -1,9 +1,9 @@
 steps:
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'us-central1-docker.pkg.dev/cicd-experiments-01/pyapprepo-artifact/flaskappimage:latest', '.']
+  args: ['build', '-t', 'us-central1-docker.pkg.dev/cicd-experiments-470715/pyapprepo-artifact/flaskappimage:latest', '.']
 
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'us-central1-docker.pkg.dev/cicd-experiments-01/pyapprepo-artifact/flaskappimage:latest']
+  args: ['push', 'us-central1-docker.pkg.dev/cicd-experiments-470715/pyapprepo-artifact/flaskappimage:latest']
 
 - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
   entrypoint: 'gcloud'
@@ -12,7 +12,7 @@ steps:
   - 'deploy'
   - 'flaskappservice'
   - '--image'
-  - 'us-central1-docker.pkg.dev/cicd-experiments-01/pyapprepo-artifact/flaskappimage:latest'
+  - 'us-central1-docker.pkg.dev/cicd-experiments-470715/pyapprepo-artifact/flaskappimage:latest'
   - '--region'
   - 'us-central1'
   - '--platform'
